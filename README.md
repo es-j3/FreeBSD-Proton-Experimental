@@ -18,7 +18,7 @@ then edit ```/usr/local/etc/poudriere.conf``` and find the commented line ```ZPO
 
 now clone the FreeBSD ports tree for poudriere to use```poudriere ports -c```
 
-create a poudriere jail ```poudriere jail -c -j default -v 14.2-RELEASE -a amd64``` you may change the RELEASE part to whatever your FreeBSD version is
+create a poudriere jail ```poudriere jail -c -j amd64 -v 14.2-RELEASE -a amd64``` you may change the RELEASE part to whatever your FreeBSD version is
 
 clone this repo ```git clone https://github.com/es-j3/FreeBSD-Proton-Experimental.git``` and cd into it, and into the emulators folder.
 
@@ -30,7 +30,7 @@ once it finishes building (hopefully,) then run ```pkg install -y /usr/local/pou
 
 we're not done yet, because we still need to install the 32 bit version.
 
-create a 32 bit poudriere jail ```poudriere jail -c -j default -v 14.2-RELEASE -a i386``` you may change the RELEASE part to whatever your FreeBSD version is
+create a 32 bit poudriere jail ```poudriere jail -c -j i386 -v 14.2-RELEASE -a i386``` you may change the RELEASE part to whatever your FreeBSD version is
 
 we can now build the i386 version of the package ```poudriere bulk -j i386 -b latest emulators/proton-experimental```
 
