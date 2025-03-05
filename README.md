@@ -6,9 +6,7 @@
 > This also includes the https://gitlab.winehq.org/wine/wine/-/merge_requests/5213/diffs patch, which fixes Unreal Engine games and some Unity ones too.
 
 ## How to use?
-> By the time I finish writing this readme, I should have some hot and fresh pre-built packages ready out of the Poudriere oven, available in the releases tab.
-
-> Feel free to use those, but you may be someone who is security-conscious and want to build it yourself (and you are cool for that), so here are some instructions for you.
+> Feel free to use the pre-built packages, available in the releases tab. Security-conscious users may want to build it themselves, so here are some instructions for that:
 
 > Make sure you have git before continuing.
 
@@ -26,7 +24,7 @@ now, copy the folder to the poudriere ports tree ```cp -r proton-experimental /u
 
 we can start building the package ```poudriere bulk -j amd64 -b latest emulators/proton-experimental```
 
-once it finishes building (hopefully,) then run ```pkg install -y /usr/local/poudriere/data/packages/amd64-default/All/wine-proton-e.9.0.20250203.pkg``` and if that works, congratulations. 
+once it finishes building (hopefully,) then run ```pkg install -y /usr/local/poudriere/data/packages/amd64-default/All/wine-proton-e.9.0.20250218.pkg``` and if that works, congratulations. 
 
 we're not done yet, because we still need to install the 32 bit version.
 
@@ -34,6 +32,6 @@ create a 32 bit poudriere jail ```poudriere jail -c -j i386 -v 14.2-RELEASE -a i
 
 we can now build the i386 version of the package ```poudriere bulk -j i386 -b latest emulators/proton-experimental```
 
-after that, run ```/usr/local/wine-proton/bin/pkg32.sh install -y /usr/local/poudriere/data/packages/i386-default/All/wine-proton-e.9.0.20250203.pkg``` and you should be all good
+after that, run ```/usr/local/wine-proton/bin/pkg32.sh install -y /usr/local/poudriere/data/packages/i386-default/All/wine-proton-e.9.0.20250218.pkg``` and you should be all good
 
 Thanks for reading, hope this helps.
