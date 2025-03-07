@@ -36,11 +36,11 @@ we're not done yet, because we still need to install the 32 bit version.
 
 create a 32 bit poudriere jail for FreeBSD 14.x-RELEASE: ```poudriere jail -c -j i386 -v 14.2-RELEASE -a i386``` you may change the RELEASE part to whatever your FreeBSD version is
 
-*or* using the pkgbase method for FreeBSD 14-STABLE: ```poudriere jail -c -v 14 -j 14-stable-i386 -m pkgbase=base_latest -U https://pkg.freebsd.org/```
+*or* using the pkgbase method for FreeBSD 14-STABLE: ```poudriere jail -c -v 14 -j 14-stable-i386 -a i386 -m pkgbase=base_latest -U https://pkg.freebsd.org/```
 
-*or* using the pkgbase method for FreeBSD 15-CURRENT: ```poudriere jail -c -v 15 -j main-i386 -m pkgbase=base_latest -U https://pkg.freebsd.org/```
+*or* using the pkgbase method for FreeBSD 15-CURRENT: ```poudriere jail -c -v 15 -j main-i386 -a i386 -m pkgbase=base_latest -U https://pkg.freebsd.org/```
 
-if a jail already exists and needs updating use ```poudriere jail -u -j i386``` for FreeBSD 14.x-RELEASE, ```poudriere jail -u -j main-i386``` for FreeBSD 15-CURRENT or ```poudriere jail -u -j 14-stable-i386``` for FreeBSD 14-STABLE
+if a jail already exists and needs updating use ```poudriere jail -u -j i386``` for FreeBSD 14.x-RELEASE, ```poudriere jail -u -j 14-stable-i386``` for FreeBSD 14-STABLE or ```poudriere jail -u -j main-i386``` for FreeBSD 15-CURRENT
 
 we can now build the i386 version of the package ```poudriere bulk -j i386 -b latest emulators/proton-experimental``` but replace ```i386``` with ```14-stable-i386``` for FreeBSD 14-STABLE or ```main-i386``` for FreeBSD 15-CURRENT
 
