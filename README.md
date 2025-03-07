@@ -18,11 +18,11 @@ now clone the FreeBSD ports tree for poudriere to use ```poudriere ports -c```
 
 create a poudriere jail for FreeBSD 14.x-RELEASE: ```poudriere jail -c -j amd64 -v 14.2-RELEASE -a amd64``` you may change the RELEASE part to whatever your FreeBSD version is
 
-*or* using the pkgbase method for FreeBSD 14-STABLE: ```poudriere jail -c -v 14 -j 14-stable-amd64 -m pkgbase=base_latest -U https://pkg.freebsd.org/```
+*or* using the pkgbase method for FreeBSD 14-STABLE: ```poudriere jail -c -v 14 -j 14-stable-amd64 -a amd64 -m pkgbase=base_latest -U https://pkg.freebsd.org/```
 
-*or* using the pkgbase method for FreeBSD 15-CURRENT: ```poudriere jail -c -v 15 -j main-amd64 -m pkgbase=base_latest -U https://pkg.freebsd.org/```
+*or* using the pkgbase method for FreeBSD 15-CURRENT: ```poudriere jail -c -v 15 -j main-amd64 -a amd64 -m pkgbase=base_latest -U https://pkg.freebsd.org/```
 
-if a jail already exists and needs updating use ```poudriere jail -u -j amd64``` for FreeBSD 14.x-RELEASE, ```poudriere jail -u -j main-amd64``` for FreeBSD 15-CURRENT or ```poudriere jail -u -j 14-stable-amd64``` for FreeBSD 14-STABLE
+if a jail already exists and needs updating use ```poudriere jail -u -j amd64``` for FreeBSD 14.x-RELEASE, ```poudriere jail -u -j 14-stable-amd64``` for FreeBSD 14-STABLE, or ```poudriere jail -u -j main-amd64``` for FreeBSD 15-CURRENT
 
 clone this repo ```git clone https://github.com/es-j3/FreeBSD-Proton-Experimental.git``` and cd into it, and into the emulators folder.
 
