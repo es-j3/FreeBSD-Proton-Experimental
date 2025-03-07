@@ -24,7 +24,7 @@ now, copy the folder to the poudriere ports tree ```cp -r proton-experimental /u
 
 we can start building the package ```poudriere bulk -j amd64 -b latest emulators/proton-experimental```
 
-once it finishes building (hopefully,) then run ```pkg install -y /usr/local/poudriere/data/packages/amd64-default/All/wine-proton-e.9.0.20250218.pkg``` and if that works, congratulations. 
+once it finishes building (hopefully,) then run ```pkg install -y /usr/local/poudriere/data/packages/amd64-default/All/wine-proton-e.9.0.20250306.pkg``` and if that works, congratulations. 
 
 we're not done yet, because we still need to install the 32 bit version.
 
@@ -32,6 +32,6 @@ create a 32 bit poudriere jail ```poudriere jail -c -j i386 -v 14.2-RELEASE -a i
 
 we can now build the i386 version of the package ```poudriere bulk -j i386 -b latest emulators/proton-experimental```
 
-after that, run ```/usr/local/wine-proton/bin/pkg32.sh install -y /usr/local/poudriere/data/packages/i386-default/All/wine-proton-e.9.0.20250218.pkg``` and you should be all good
+after that, run ```/usr/local/wine-proton/bin/pkg32.sh install -y /usr/local/poudriere/data/packages/i386-default/All/wine-proton-e.9.0.20250306.pkg``` and you should be all good
 
 Thanks for reading, hope this helps.
