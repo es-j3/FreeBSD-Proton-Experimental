@@ -28,7 +28,7 @@ clone this repo ```git clone https://github.com/es-j3/FreeBSD-Proton-Experimenta
 
 now, copy the folder to the poudriere ports tree ```cp -r proton-experimental /usr/local/poudriere/ports/default/emulators/proton-experimental``` 
 
-we can start building the package ```poudriere bulk -j amd64 -b latest emulators/proton-experimental```
+we can start building the package ```poudriere bulk -j amd64 -b latest emulators/proton-experimental``` but replace ```amd64``` with ```14-stable-amd64``` for FreeBSD 14-STABLE or ```main-amd64``` for FreeBSD 15-CURRENT
 
 once it finishes building (hopefully,) then run ```pkg install -y /usr/local/poudriere/data/packages/amd64-default/All/wine-proton-e.9.0.20250306.pkg``` and if that works, congratulations. 
 
@@ -42,7 +42,7 @@ create a 32 bit poudriere jail for FreeBSD 14.x-RELEASE: ```poudriere jail -c -j
 
 if a jail already exists and needs updating use ```poudriere jail -u -j i386``` for FreeBSD 14.x-RELEASE, ```poudriere jail -u -j main-i386``` for FreeBSD 15-CURRENT or ```poudriere jail -u -j 14-stable-i386``` for FreeBSD 14-STABLE
 
-we can now build the i386 version of the package ```poudriere bulk -j i386 -b latest emulators/proton-experimental```
+we can now build the i386 version of the package ```poudriere bulk -j i386 -b latest emulators/proton-experimental``` but replace ```i386``` with ```14-stable-i386``` for FreeBSD 14-STABLE or ```main-i386``` for FreeBSD 15-CURRENT
 
 after that, run ```/usr/local/wine-proton/bin/pkg32.sh install -y /usr/local/poudriere/data/packages/i386-default/All/wine-proton-e.9.0.20250306.pkg``` and you should be all good
 
