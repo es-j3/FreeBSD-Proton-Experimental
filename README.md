@@ -12,9 +12,9 @@
 
 ```pkg install poudriere``` install poudriere
 
-then edit ```/usr/local/etc/poudriere.conf``` and find the commented line ```ZPOOL=zroot``` and uncomment it.
+then edit ```/usr/local/etc/poudriere.conf``` and find the commented line ```ZPOOL=zroot``` and uncomment it for a ZFS-based installation.
 
-now clone the FreeBSD ports tree for poudriere to use```poudriere ports -c```
+now clone the FreeBSD ports tree for poudriere to use ```poudriere ports -c```
 
 create a poudriere jail for FreeBSD 14.x-RELEASE: ```poudriere jail -c -j amd64 -v 14.2-RELEASE -a amd64``` you may change the RELEASE part to whatever your FreeBSD version is
 
