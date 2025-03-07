@@ -16,7 +16,13 @@ then edit ```/usr/local/etc/poudriere.conf``` and find the commented line ```ZPO
 
 now clone the FreeBSD ports tree for poudriere to use```poudriere ports -c```
 
-create a poudriere jail ```poudriere jail -c -j amd64 -v 14.2-RELEASE -a amd64``` you may change the RELEASE part to whatever your FreeBSD version is
+create a poudriere jail for FreeBSD 14.x-RELEASE: ```poudriere jail -c -j amd64 -v 14.2-RELEASE -a amd64``` you may change the RELEASE part to whatever your FreeBSD version is
+
+*or* using the pkgbase method for FreeBSD 14-STABLE: ```poudriere jail -c -v 14 -j 14-stable-amd64 -m pkgbase=base_latest -U https://pkg.freebsd.org/```
+
+*or* using the pkgbase method for FreeBSD 15-CURRENT: ```poudriere jail -c -v 15 -j main-amd64 -m pkgbase=base_latest -U https://pkg.freebsd.org/```
+
+if a jail already exists and needs updating use ```poudriere jail -u -j amd64``` for FreeBSD 14.x-RELEASE, ```poudriere jail -u -j main-amd64``` for FreeBSD 15-CURRENT or ```poudriere jail -u -j 14-stable-amd64``` for FreeBSD 14-STABLE
 
 clone this repo ```git clone https://github.com/es-j3/FreeBSD-Proton-Experimental.git``` and cd into it, and into the emulators folder.
 
@@ -28,7 +34,13 @@ once it finishes building (hopefully,) then run ```pkg install -y /usr/local/pou
 
 we're not done yet, because we still need to install the 32 bit version.
 
-create a 32 bit poudriere jail ```poudriere jail -c -j i386 -v 14.2-RELEASE -a i386``` you may change the RELEASE part to whatever your FreeBSD version is
+create a 32 bit poudriere jail for FreeBSD 14.x-RELEASE: ```poudriere jail -c -j i386 -v 14.2-RELEASE -a i386``` you may change the RELEASE part to whatever your FreeBSD version is
+
+*or* using the pkgbase method for FreeBSD 14-STABLE: ```poudriere jail -c -v 14 -j 14-stable-i386 -m pkgbase=base_latest -U https://pkg.freebsd.org/```
+
+*or* using the pkgbase method for FreeBSD 15-CURRENT: ```poudriere jail -c -v 15 -j main-i386 -m pkgbase=base_latest -U https://pkg.freebsd.org/```
+
+if a jail already exists and needs updating use ```poudriere jail -u -j i386``` for FreeBSD 14.x-RELEASE, ```poudriere jail -u -j main-i386``` for FreeBSD 15-CURRENT or ```poudriere jail -u -j 14-stable-i386``` for FreeBSD 14-STABLE
 
 we can now build the i386 version of the package ```poudriere bulk -j i386 -b latest emulators/proton-experimental```
 
