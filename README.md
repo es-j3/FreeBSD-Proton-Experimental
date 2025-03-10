@@ -27,7 +27,7 @@ poudriere ports -c
 
 Now, we a poudriere jail for FreeBSD 14.x-RELEASE: 
 ```
-poudriere jail -c -j amd64 -v 14.2-RELEASE -a amd64```
+poudriere jail -c -j amd64 -v 14.2-RELEASE -a amd64
 ```
 You may change the RELEASE part to whatever your FreeBSD version is.
 
