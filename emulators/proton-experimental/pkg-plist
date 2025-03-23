@@ -356,6 +356,7 @@ wine-proton/lib/wine/%%WINEARCH%%-unix/opengl32.so
 wine-proton/lib/wine/%%WINEARCH%%-unix/qcap.so
 wine-proton/lib/wine/%%WINEARCH%%-unix/secur32.so
 wine-proton/lib/wine/%%WINEARCH%%-unix/win32u.so
+wine-proton/lib/wine/%%WINEARCH%%-unix/windows.media.speech.so
 wine-proton/lib/wine/%%WINEARCH%%-unix/winebus.so
 wine-proton/lib/wine/%%WINEARCH%%-unix/winegstreamer.so
 wine-proton/lib/wine/%%WINEARCH%%-unix/wineoss.so
@@ -602,6 +603,7 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/icacls.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/iccvid.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/icinfo.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/icmp.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/icu.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/ieframe.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/ieproxy.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/iexplore.exe
