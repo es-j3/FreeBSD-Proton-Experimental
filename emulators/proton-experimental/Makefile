@@ -1,5 +1,5 @@
 PORTNAME=	wine-proton
-DISTVERSION=	experimental-9.0-20250317
+DISTVERSION=	experimental-9.0-20250320
 PORTREVISION=	0
 CATEGORIES=	emulators
 
