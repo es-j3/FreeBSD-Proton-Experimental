@@ -17,7 +17,7 @@ pkg install poudriere
 
 If using ZFS, let's go ahead and set our zpool to zroot, or whatever you may have set it to.
 ```
-su -l root -c 'echo ZPOOL=zroot >> /usr/local/etc/poudriere.conf
+su -l root -c 'echo ZPOOL=zroot >> /usr/local/etc/poudriere.conf'
 ```
 
 Let's now clone the poudriere-side FreeBSD Ports Tree
