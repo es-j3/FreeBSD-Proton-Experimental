@@ -1,5 +1,5 @@
 PORTNAME=	wine-proton
-DISTVERSION=	experimental-9.0-20250402
+DISTVERSION=	experimental-10.0-20250429
 PORTREVISION=	0
 CATEGORIES=	emulators
 
@@ -19,7 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgnutls.so:security/gnutls \
-		libvulkan.so:graphics/vulkan-loader
+		libvulkan.so:graphics/vulkan-loader \
+		libavcodec.so:multimedia/ffmpeg4
 
 # amd_ags_x64.so
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm \
@@ -36,7 +37,7 @@ USE_GCC=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	ValveSoftware
 GH_PROJECT=	wine
-GH_TAGNAME=	4f62195d74effc55cd44b36501cde31bb76fb0ab
+GH_TAGNAME=	c03e2c8bc4442e9174db9ba96ebce8e972d69b06
 
 USE_GL=		gl
 USE_GNOME=	glib20
