@@ -13,7 +13,7 @@
      ERR("Invalid WINE_CPU_TOPOLOGY string %s (%s).\n", debugstr_a(env_override), debugstr_a(s));
  }
 +#else
-+static void fill_cpu_override(unsigned int)
++void fill_cpu_override(void)
 +{
 +    /* do nothing */
 +}

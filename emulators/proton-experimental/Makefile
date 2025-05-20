@@ -1,10 +1,10 @@
 PORTNAME=	wine-proton
-DISTVERSION=	experimental-10.0-20250507
+DISTVERSION=	experimental-10.0-20250515
 PORTREVISION=	0
 CATEGORIES=	emulators
 
-MAINTAINER=	alexander.nogal@proton.me
-COMMENT=	Proton experimental port for FreeBSD with a cool patch
+MAINTAINER=	tmp386@live.com
+COMMENT=	Proton experimental port for FreeBSD with a cool patch. Co-maintainer: alexander.nogal@proton.me
 WWW=		https://github.com/ValveSoftware/wine
 
 LICENSE=	LGPL21 LGPL3
@@ -37,7 +37,7 @@ USE_GCC=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	ValveSoftware
 GH_PROJECT=	wine
-GH_TAGNAME=	7c6f59b0e73360cf78ab07c7bf0766bfb0a7db64
+GH_TAGNAME=	edb06645b63a47b4154f98e488f87af3e48f2f4f
 
 USE_GL=		gl
 USE_GNOME=	glib20
