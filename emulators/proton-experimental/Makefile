@@ -1,5 +1,5 @@
 PORTNAME=	wine-proton
-DISTVERSION=	experimental-10.0-20250515
+DISTVERSION=	experimental-10.0-20250522
 PORTREVISION=	0
 CATEGORIES=	emulators
 
@@ -20,7 +20,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgnutls.so:security/gnutls \
 		libvulkan.so:graphics/vulkan-loader \
-		libavcodec.so:multimedia/ffmpeg4
+		libavcodec.so:multimedia/ffmpeg4 \
+		libvosk.so:audio/vosk-api
 
 # amd_ags_x64.so
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm \
@@ -37,7 +38,7 @@ USE_GCC=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	ValveSoftware
 GH_PROJECT=	wine
-GH_TAGNAME=	edb06645b63a47b4154f98e488f87af3e48f2f4f
+GH_TAGNAME=	5931e7d33c029a31bc4be3c9aed2b2dc83920028
 
 USE_GL=		gl
 USE_GNOME=	glib20
@@ -133,7 +134,8 @@ post-patch:
 	${REINPLACE_CMD} 's/CFLAGS="$$llvm_extra_cflags $$llvm_cflags"/CFLAGS="$$CROSSCFLAGS $$llvm_extra_cflags $$llvm_cflags"/g' ${WRKSRC}/configure.ac
 
 pre-configure:
-	cd ${WRKSRC} && ${PYTHON_CMD} dlls/winevulkan/make_vulkan --xml vk.xml
+#	cd ${WRKSRC} && ${PYTHON_CMD} dlls/winevulkan/make_vulkan --xml vk.xml --video-xml video.xml
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} dlls/winevulkan/make_vulkan --xml vk.xml --video-xml video.xml
 	cd ${WRKSRC} && ${PERL5} tools/make_specfiles
 
 pre-build:
