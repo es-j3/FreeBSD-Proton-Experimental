@@ -27,7 +27,7 @@ poudriere ports -c
 
 Now, we a poudriere jail for FreeBSD 14.x-RELEASE: 
 ```
-poudriere jail -c -j amd64 -v 14.2-RELEASE -a amd64
+poudriere jail -c -j amd64 -v 14.3-RELEASE -a amd64
 ```
 You may change the RELEASE part to whatever your FreeBSD version is.
 
@@ -73,7 +73,7 @@ but replace ```amd64``` with ```14-stable-amd64``` for FreeBSD 14-STABLE or ```m
 
 Once it finishes building (hopefully,) then run 
 ```
-pkg install -y /usr/local/poudriere/data/packages/amd64-default/All/wine-proton-e.10.0.20250603.pkg
+pkg install -y /usr/local/poudriere/data/packages/amd64-default/All/wine-proton-e.10.0.20250612.pkg
 ``` 
 If that works, congratulations. 
 
@@ -81,7 +81,7 @@ We're not done yet, because we still need to install the 32 bit version.
 
 Create a 32 bit poudriere jail for FreeBSD 14.x-RELEASE: 
 ```
-poudriere jail -c -j i386 -v 14.2-RELEASE -a i386
+poudriere jail -c -j i386 -v 14.3-RELEASE -a i386
 ``` 
 you may change the RELEASE part to whatever your FreeBSD version is
 
@@ -117,7 +117,7 @@ but replace ```i386``` with ```14-stable-i386``` for FreeBSD 14-STABLE or ```mai
 
 After that, run: 
 ```
-/usr/local/wine-proton/bin/pkg32.sh install -y /usr/local/poudriere/data/packages/i386-default/All/wine-proton-e.10.0.20250603.pkg
+/usr/local/wine-proton/bin/pkg32.sh install -y /usr/local/poudriere/data/packages/i386-default/All/wine-proton-e.10.0.20250612.pkg
 ``` 
 and you should be all good
 
